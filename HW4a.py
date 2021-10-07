@@ -23,8 +23,7 @@ def github():
         commit_count = len(data_commit)        
         print("Commit info: ", commit_count)
         
-#        for commit["sha"] in c:
-#               n = len(c)
+
 github()
 
 class testingCommit(unittest.TestCase):
