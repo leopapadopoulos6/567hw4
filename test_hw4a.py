@@ -5,7 +5,7 @@ from HW4a import github
 class TestHW4a(unittest.TestCase):
     def testCase1(self):
         self.assertEqual(github('leopapadopoulos6'), ['Repo: 567hw4 Commit info: 30',
-                                                 'Repo: hw01testingtriangles Commit info: 1',
+                                                 'Repo: GitHubApi567 Commit info: 15',
                                                  'Repo: hw01testingtriangles Commit info: 1',
                                                  'Repo: p3-lpapadopoulos Commit info: 1',
                                                  'Repo: ssw567 Commit info: 2',
