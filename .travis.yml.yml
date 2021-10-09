@@ -1,0 +1,7 @@
+language: python
+python:
+    -"3.9"
+install
+    -pip install requests
+script:
+    -python -m unittest test_hw4a.py
