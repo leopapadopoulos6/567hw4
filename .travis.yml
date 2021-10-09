@@ -4,4 +4,4 @@ python:
 install
     -pip install requests
 script:
-    -python -m unittest 567hw4
+    -python -m unittest HW4a
