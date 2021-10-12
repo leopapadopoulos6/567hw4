@@ -1,16 +1,23 @@
 import unittest
+import json
+from unittest import mock
+import sys
+
+from requests.models import Response
+sys.path.append("/Users/Leo/python/567")
 from HW4a import github
 
-
 class TestHW4a(unittest.TestCase):
-    def testCase1(self):
-        self.assertEqual(github('leopapadopoulos6'), ['Repo: 567hw4 Commit info: 30',
-                                                 'Repo: GitHubApi567 Commit info: 15',
-                                                 'Repo: hw01testingtriangles Commit info: 1',
-                                                 'Repo: p3-lpapadopoulos Commit info: 1',
-                                                 'Repo: ssw567 Commit info: 2',
-                                                 'Repo: Triangle567 Commit info: 11'])
-
+    def test_request(self):
+        with mock.patch('requests.get') as mock_get:
+            mock_get.return_value.ok = True
+            mock_get.return_value.json.return_value = [
+                {'name': '1'},
+                {'name': '2'}
+            ]
+            result = github('leopapadopoulos6')
+            self.assertEqual(result, ['Repo: 1 Commit info: 2',
+                'Repo: 2 Commit info: 2',])
 
 if __name__ == '__main__':
     print('Running unit tests')
